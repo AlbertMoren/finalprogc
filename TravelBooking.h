@@ -21,3 +21,25 @@ typedef struct reserva Reserva;
 typedef struct agenda Agenda;
 typedef struct viagem Viagem;
 typedef struct tabela_viagem TabelaViagem;
+
+/*Implementação da lista de passageiro*/
+typedef struct lista Lista;
+
+/* TAD:  lista encadeada */
+ListaPassageiro *lista_cria();
+int lista_liberar(ListaPassageiro **lista);
+int lista_inserir(ListaPassageiro *lista, Passageiro *passageiro);
+ListaPassageiro *lista_busca(ListaPassageiro *lista, int ID);
+ListaPassageiro *lista_retirar(ListaPassageiro *lista);
+int lista_vazia(ListaPassageiro* lista);
+Passageiro *lista_primeiro(ListaPassageiro* lista);
+
+/*Funções para passageiros*/
+
+int verificar_parametros(int passageiro_id, char *nome, char *endereco);
+Passageiro *passageiro_novo(int id, char *nome,char *endereco);
+void passageiro_liberar(Passageiro **passageiro);
+void passageiro_acessa(Passageiro *passageiro,int *id, char *nome, char *endereco);
+void passageiro_atribuir(Passageiro *passageiro, int id, char *nome, char *endereco);
+int passageiro_igual(Passageiro *passageiro1, Passageiro *passageiro2);
+int passageiro_tramanho();
